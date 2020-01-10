@@ -1,0 +1,35 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/01/07 14:13:12 by mmartin-          #+#    #+#             */
+/*   Updated: 2020/01/07 16:45:03 by mmartin-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+/*
+**	DESCRIPTION
+**		Finds first ocurrence of _c_ in the first _n_ bytes of _s_, if not
+**		found, return NULL
+**	RETURN VALUE
+**		Returns first ocurrence of _c_ in _s_, or NULL if not found
+*/
+
+void	*ft_memchr(const void *s, int c, size_t n)
+{
+	size_t count;
+
+	count = 0;
+	while (count < n)
+	{
+		if (*(const char*)(s + count) == c)
+			return ((void *)s + count);
+		count++;
+	}
+	return (NULL);
+}
