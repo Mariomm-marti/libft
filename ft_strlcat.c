@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 13:02:11 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/08 14:59:25 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/01/11 11:23:23 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		dst[count + dstlen] = src[count];
 		count++;
 	}
-	if (count < dstsize)
+	if (count + dstlen < dstsize)
 		dst[count + dstlen] = 0;
 	return (srclen + dstlen);
 }

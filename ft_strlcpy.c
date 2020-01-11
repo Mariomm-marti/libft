@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 17:38:48 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/10 18:17:58 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/01/10 19:05:03 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,19 @@
 **		Returns the length of _src_
 */
 
-
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t count;
+	size_t	count;
+	size_t	srclen;
 
-	count = 0;
-	while (count < dstsize && *(const char *)(src + count))
-	{
+	srclen = 0;
+	while (*(const char *)(src + srclen))
+		srclen++;
+	if (dstsize == 0)
+		return (srclen);
+	count = -1;
+	while (++count < dstsize - 1 && *(const char *)(src + count))
 		*(char *)(dst + count) = *(const char *)(src + count);
-		count++;
-	}
 	*(char *)(dst + count) = 0;
-	count = 0;
-	while (*(const char *)(src + count))
-		count++;
-	return (count);
+	return (srclen);
 }
