@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 17:38:48 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/10 19:05:03 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/01/11 18:03:47 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	size_t	count;
 	size_t	srclen;
 
+	if (dst == NULL || src == NULL)
+		return (0);
 	srclen = 0;
 	while (*(const char *)(src + srclen))
 		srclen++;

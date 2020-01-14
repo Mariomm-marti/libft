@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/08 22:02:31 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/11 15:02:56 by mmartin-         ###   ########.fr       */
+/*   Created: 2020/01/13 13:28:26 by mmartin-          #+#    #+#             */
+/*   Updated: 2020/01/13 14:17:50 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-**	DESCRIPTION
-**		Checks whether _c_ is in the range of 32-126
-**	RETURN VALUES
-**		Zero if not in range, one if in range
-*/
-
-int		ft_isprint(int c)
+char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
-	return (c >= 32 && c <= 126);
+	unsigned int	count;
+	char			*str;
+
+	if (!s || !f)
+		return (NULL);
+	count = -1;
+	if ((str = ft_strdup(s)) == NULL)
+		return (NULL);
+	while (*(str + ++count))
+		*(str + count) = f(count, *(str + count));
+	return (str);
 }

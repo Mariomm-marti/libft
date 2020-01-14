@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/08 22:02:31 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/11 15:02:56 by mmartin-         ###   ########.fr       */
+/*   Created: 2020/01/12 13:56:24 by mmartin-          #+#    #+#             */
+/*   Updated: 2020/01/12 16:23:36 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,22 @@
 
 /*
 **	DESCRIPTION
-**		Checks whether _c_ is in the range of 32-126
+**		Trims using _set_ the beginning and the end _s1_ and uses ft_substr
+**		to create the trimmed string
 **	RETURN VALUES
-**		Zero if not in range, one if in range
+**		Trimmed string, or NULL if failed
 */
 
-int		ft_isprint(int c)
+char	*ft_strtrim(const char *s1, const char *set)
 {
-	return (c >= 32 && c <= 126);
+	size_t x;
+
+	if (!s1 || !set)
+		return (NULL);
+	while (*s1 && ft_strchr(set, *s1))
+		s1++;
+	x = ft_strlen(s1);
+	while (x > 0 && ft_strchr(set, *(s1 + x)))
+		x--;
+	return (ft_substr(s1, 0, x + 1));
 }

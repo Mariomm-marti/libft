@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/08 22:02:31 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/11 15:02:56 by mmartin-         ###   ########.fr       */
+/*   Created: 2020/01/12 18:45:19 by mmartin-          #+#    #+#             */
+/*   Updated: 2020/01/12 18:52:26 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,21 @@
 
 /*
 **	DESCRIPTION
-**		Checks whether _c_ is in the range of 32-126
+**		Clears a list _lst_ using the providen function _del_ for each element
+**		content
 **	RETURN VALUES
-**		Zero if not in range, one if in range
+**		None
 */
 
-int		ft_isprint(int c)
+void		ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	return (c >= 32 && c <= 126);
+	t_list *aux;
+
+	aux = *lst;
+	while (aux)
+	{
+		ft_lstdelone(aux, del);
+		aux = aux->next;
+	}
+	*lst = NULL;
 }

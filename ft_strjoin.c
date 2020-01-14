@@ -1,35 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/07 12:07:22 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/13 19:40:10 by mmartin-         ###   ########.fr       */
+/*   Created: 2020/01/11 12:43:49 by mmartin-          #+#    #+#             */
+/*   Updated: 2020/01/11 18:52:38 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 /*
 **	DESCRIPTION
-**		Copy _n_ bytes from _src_ to _dst_
-**	RETURN VALUE
-**		Returns _dst_
+**		Copy _s1_ and _s2_ into a malloc copy
+**	RETURN VALUES
+**		Returns the copy of _s1_ and _s2_ into only one string
 */
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+char	*ft_strjoin(const char *s1, const char *s2)
 {
-	size_t count;
+	size_t	count;
+	char	*alloc;
 
-	if (dst == NULL && src == NULL)
+	if (!s1 || !s2)
+		return (NULL);
+	if ((alloc = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1)) == NULL)
 		return (NULL);
 	count = 0;
-	while (count < n)
+	while (*s1)
 	{
-		*(unsigned char *)(dst + count) = *(const unsigned char *)(src + count);
-		count++;
+		*(alloc + count) = *s1;
+		++s1 && ++count;
 	}
-	return (dst);
+	while (*s2)
+	{
+		*(alloc + count) = *s2;
+		++s2 && ++count;
+	}
+	*(alloc + count) = 0;
+	return (alloc);
 }

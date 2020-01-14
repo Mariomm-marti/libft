@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/08 22:02:31 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/11 15:02:56 by mmartin-         ###   ########.fr       */
+/*   Created: 2020/01/12 18:54:21 by mmartin-          #+#    #+#             */
+/*   Updated: 2020/01/12 19:25:23 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,16 @@
 
 /*
 **	DESCRIPTION
-**		Checks whether _c_ is in the range of 32-126
+**		Iterates through the _lst_ and apply _f_ to each element
 **	RETURN VALUES
-**		Zero if not in range, one if in range
+**		None
 */
 
-int		ft_isprint(int c)
+void		ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	return (c >= 32 && c <= 126);
+	if (!f || !lst)
+		return ;
+	if (f)
+		f(lst->content);
+	ft_lstiter(lst->next, f);
 }

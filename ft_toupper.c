@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 22:10:21 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/08 22:13:29 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/01/11 15:04:14 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,5 @@
 
 int		ft_toupper(int c)
 {
-	if ((unsigned char)c >= 'a' && (unsigned char)c <= 'z')
-		return (c - 32);
-	return (c);
+	return ((c >= 'a' && c <= 'z') ? c - 32 : c);
 }

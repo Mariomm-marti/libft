@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/08 22:02:31 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/11 15:02:56 by mmartin-         ###   ########.fr       */
+/*   Created: 2020/01/11 18:31:09 by mmartin-          #+#    #+#             */
+/*   Updated: 2020/01/11 18:53:08 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 /*
 **	DESCRIPTION
-**		Checks whether _c_ is in the range of 32-126
+**		Creates a new t_list struct copying _content_ into the new list content
 **	RETURN VALUES
-**		Zero if not in range, one if in range
+**		Created t_list with malloc
 */
 
-int		ft_isprint(int c)
+t_list	*ft_lstnew(void *content)
 {
-	return (c >= 32 && c <= 126);
+	t_list	*newlist;
+
+	if ((newlist = (t_list *)malloc(sizeof(t_list))) == NULL)
+		return (NULL);
+	newlist->content = content;
+	newlist->next = NULL;
+	return (newlist);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/08 22:02:31 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/11 15:02:56 by mmartin-         ###   ########.fr       */
+/*   Created: 2020/01/11 19:39:50 by mmartin-          #+#    #+#             */
+/*   Updated: 2020/01/11 19:43:51 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,16 @@
 
 /*
 **	DESCRIPTION
-**		Checks whether _c_ is in the range of 32-126
+**		Gets last element from list, or NULL if _lst_ is null
 **	RETURN VALUES
-**		Zero if not in range, one if in range
+**		Last element of _lst_
 */
 
-int		ft_isprint(int c)
+t_list	*ft_lstlast(t_list *lst)
 {
-	return (c >= 32 && c <= 126);
+	if (!lst)
+		return (NULL);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }

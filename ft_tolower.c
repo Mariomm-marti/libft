@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 22:15:40 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/08 22:17:32 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/01/11 15:04:50 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,5 @@
 
 int		ft_tolower(int c)
 {
-	if ((unsigned char)c >= 'A' && (unsigned char)c <= 'Z')
-		return (c + 32);
-	return (c);
+	return ((c >= 'A' && c <= 'Z') ? c + 32 : c);
 }

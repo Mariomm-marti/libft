@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/08 22:02:31 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/11 15:02:56 by mmartin-         ###   ########.fr       */
+/*   Created: 2020/01/11 19:46:41 by mmartin-          #+#    #+#             */
+/*   Updated: 2020/01/11 19:51:04 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,17 @@
 
 /*
 **	DESCRIPTION
-**		Checks whether _c_ is in the range of 32-126
+**		Adds _new_ to _lst_, or initialize it if _lst_ is NULL
 **	RETURN VALUES
-**		Zero if not in range, one if in range
+**		None
 */
 
-int		ft_isprint(int c)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	return (c >= 32 && c <= 126);
+	if (*lst == NULL)
+	{
+		*lst = new;
+		return ;
+	}
+	ft_lstlast(*lst)->next = new;
 }

@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 21:58:41 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/08 22:00:35 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/01/11 15:02:26 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,5 @@
 
 int		ft_isascii(int c)
 {
-	if ((unsigned char)c >= 0 && (unsigned char)c <= 127)
-		return (1);
-	return (0);
+	return (c >= 0 && c <= 127);
 }

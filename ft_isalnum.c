@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 21:48:57 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/08 21:56:02 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/01/11 15:01:58 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,5 @@
 
 int		ft_isalnum(int c)
 {
-	if (((unsigned char)c >= '0' && (unsigned char)c <= '9') ||
-			((unsigned char)c >= 'A' && (unsigned char)c <= 'Z') ||
-			((unsigned char)c >= 'a' && (unsigned char)c <= 'z'))
-		return (1);
-	return (0);
+	return (ft_isalpha(c) || ft_isdigit(c));
 }

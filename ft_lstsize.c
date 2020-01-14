@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/08 22:02:31 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/11 15:02:56 by mmartin-         ###   ########.fr       */
+/*   Created: 2020/01/11 19:12:52 by mmartin-          #+#    #+#             */
+/*   Updated: 2020/01/11 19:28:39 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,17 @@
 
 /*
 **	DESCRIPTION
-**		Checks whether _c_ is in the range of 32-126
+**		Recursively iterate through a t_list until next element is NULL, return
+**		total count
 **	RETURN VALUES
-**		Zero if not in range, one if in range
+**		List length
 */
 
-int		ft_isprint(int c)
+int		ft_lstsize(t_list *lst)
 {
-	return (c >= 32 && c <= 126);
+	if (lst == NULL)
+		return (0);
+	if (lst->next != NULL)
+		return (ft_lstsize(lst->next) + 1);
+	return (1);
 }

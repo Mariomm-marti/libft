@@ -6,10 +6,11 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 18:43:45 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/10 19:33:45 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/01/11 18:17:35 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
 #include "libft.h"
 
 /*
@@ -26,6 +27,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t	found;
 	size_t	count;
 
+	if (haystack == needle)
+		return ((char *)haystack);
 	foundlen = 0;
 	while (needle[foundlen])
 		foundlen++;

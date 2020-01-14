@@ -1,25 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/08 22:02:31 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/11 15:02:56 by mmartin-         ###   ########.fr       */
+/*   Created: 2020/01/12 18:11:53 by mmartin-          #+#    #+#             */
+/*   Updated: 2020/01/12 18:28:33 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
 
-/*
-**	DESCRIPTION
-**		Checks whether _c_ is in the range of 32-126
-**	RETURN VALUES
-**		Zero if not in range, one if in range
-*/
-
-int		ft_isprint(int c)
+void	ft_putnbr_fd(int n, int fd)
 {
-	return (c >= 32 && c <= 126);
+	long nlong;
+	char digit;
+
+	nlong = (long)n;
+	if (nlong < 0)
+	{
+		write(fd, "-", 1);
+		nlong *= -1;
+	}
+	if (nlong < 10)
+	{
+		digit = nlong + '0';
+		write(fd, &digit, 1);
+	}
+	else
+	{
+		ft_putnbr_fd(nlong / 10, fd);
+		ft_putnbr_fd(nlong % 10, fd);
+	}
 }
