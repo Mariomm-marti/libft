@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 16:50:01 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/07 17:05:01 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/01/15 11:46:22 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t count;
 
+	if (!s1 && !s2)
+		return (0);
 	count = 0;
 	while (count < n)
 	{

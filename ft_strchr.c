@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 15:45:41 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/10 16:29:42 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/01/15 12:07:31 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)s);
 		else
 			s++;
-	if (*s == (char)c)
+	if ((char)c == 0)
 		return ((char *)s);
 	return (NULL);
 }

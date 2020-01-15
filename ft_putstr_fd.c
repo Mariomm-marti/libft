@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/12 13:32:53 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/12 16:04:57 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/01/15 14:50:28 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	if (s)
+	if (s != NULL)
 		write(fd, s, ft_strlen(s));
 }

@@ -6,7 +6,7 @@
 #    By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/10 15:21:05 by mmartin-          #+#    #+#              #
-#    Updated: 2020/01/14 16:29:32 by mmartin-         ###   ########.fr        #
+#    Updated: 2020/01/15 11:24:37 by mmartin-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,4 +39,4 @@ fclean:		clean
 
 re:			fclean bonus
 
-.PHONY:		all clean fclean re
+.PHONY:		all clean fclean re bonus

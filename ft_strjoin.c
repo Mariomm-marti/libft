@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 12:43:49 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/11 18:52:38 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/01/15 15:15:19 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 char	*ft_strjoin(const char *s1, const char *s2)
 {
 	size_t	count;
+	size_t	count_s2;
 	char	*alloc;
 
 	if (!s1 || !s2)
@@ -30,15 +31,16 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	if ((alloc = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1)) == NULL)
 		return (NULL);
 	count = 0;
-	while (*s1)
+	while (*(s1 + count))
 	{
-		*(alloc + count) = *s1;
-		++s1 && ++count;
+		*(alloc + count) = *(s1 + count);
+		++count;
 	}
-	while (*s2)
+	count_s2 = 0;
+	while (*(s2 + count_s2))
 	{
-		*(alloc + count) = *s2;
-		++s2 && ++count;
+		*(alloc + count) = *(s2 + count_s2);
+		++count && ++count_s2;
 	}
 	*(alloc + count) = 0;
 	return (alloc);

@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 13:02:17 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/14 11:24:02 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/01/15 11:33:02 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	if (dst > src)
 		while (len-- > 0)
 			*(t_byte *)(dst + len) = *(const t_byte *)(src + len);
-	else
+	else if (dst < src)
 		dst = ft_memcpy(dst, src, len);
 	return (dst);
 }

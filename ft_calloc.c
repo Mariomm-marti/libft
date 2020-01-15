@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 22:19:12 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/08 22:44:02 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/01/15 12:41:22 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,9 @@
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*alloc;
-	int		total;
 
 	if ((alloc = (t_byte *)malloc(count * size)) == NULL)
 		return (NULL);
-	total = count * size;
-	while (total > 0)
-	{
-		total--;
-		*(t_byte*)(alloc + total) = 0;
-	}
+	ft_bzero(alloc, count * size);
 	return (alloc);
 }
