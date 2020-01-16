@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 17:25:15 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/14 16:08:22 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/01/16 15:33:55 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,13 @@ static char	*get_next_word(const char *s, char c, size_t *index)
 	size_t	find_next;
 	char	*word;
 
-	while (*(s + *index) == c)
+	while (*(s + *index) == c && *(s + *index))
 		*index = *index + 1;
 	if (*(s + *index) == 0)
 		return (NULL);
 	find_next = *index;
 	while (*(s + find_next + 1) != c && *(s + find_next + 1))
-		++find_next;
+		find_next++;
 	word = ft_substr(s, *index, find_next - *index + 1);
 	*index = find_next + 1;
 	return (word);

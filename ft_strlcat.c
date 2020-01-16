@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 13:02:11 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/16 11:57:22 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/01/16 13:24:25 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 
 	count = 0;
 	while (*(dst + count) && count < dstsize)
-		++count;
+		count++;
 	len = count;
 	while (*(src + count - len) && count + 1 < dstsize)
 	{
 		*(dst + count) = *(src + count - len);
-		++count;
+		count++;
 	}
 	if (len < dstsize)
 		*(dst + count) = 0;

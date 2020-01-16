@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/12 13:56:24 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/15 14:40:31 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/01/16 14:48:46 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,15 @@
 char	*ft_strtrim(const char *s1, const char *set)
 {
 	size_t x;
+	size_t y;
 
 	if (!s1 || !set)
 		return (NULL);
-	while (*s1 && ft_strchr(set, *s1))
-		++s1;
-	x = ft_strlen(s1);
-	while (x > 0 && ft_strchr(set, *(s1 + x)))
-		x--;
-	return (ft_substr(s1, 0, x + 1));
+	x = 0;
+	while (*(s1 + x) && ft_strchr(set, *(s1 + x)))
+		x++;
+	y = ((int)ft_strlen(s1) - 1 >= 0 ? ft_strlen(s1) - 1 : 0);
+	while (y > 0 && y > x && ft_strchr(set, *(s1 + y)))
+		y--;
+	return (ft_substr(s1, x, y - x + 1));
 }

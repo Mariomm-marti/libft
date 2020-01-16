@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 18:43:45 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/16 12:10:36 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/01/16 13:28:03 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	{
 		if (!ft_strncmp((char *)(haystack + count), (char *)needle, foundlen))
 			return ((char *)(haystack + count));
-		++count;
+		count++;
 	}
 	return (NULL);
 }

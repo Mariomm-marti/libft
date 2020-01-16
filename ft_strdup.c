@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 15:05:59 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/16 12:52:55 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/01/16 13:21:07 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	*ft_strdup(const char *s1)
 	while (*(s1 + count))
 	{
 		*(copy + count) = *(s1 + count);
-		++count;
+		count++;
 	}
 	*(copy + count) = 0;
 	return (copy);
