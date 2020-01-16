@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 20:59:02 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/15 12:04:41 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/01/16 12:41:52 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int		ft_atoi(const char *str)
 			return (-1);
 		if ((result * sign) < -2147483648)
 			return (0);
-		str++;
+		++str;
 	}
 	return ((int)result * sign);
 }

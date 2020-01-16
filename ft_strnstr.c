@@ -6,11 +6,10 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 18:43:45 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/15 12:16:58 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/01/16 12:10:36 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
 
 /*
@@ -23,9 +22,8 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t	foundlen;
-	size_t	found;
 	size_t	count;
+	size_t	foundlen;
 
 	if (*needle == 0 || haystack == needle)
 		return ((char *)haystack);
@@ -33,16 +31,11 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	if (foundlen == 0)
 		return ((char *)haystack);
 	count = 0;
-	found = 0;
-	while (*(haystack + count) && count <= len)
+	while (*(haystack + count) && foundlen <= len--)
 	{
-		if (found == foundlen)
-			return ((char *)haystack + count - foundlen);
-		else if (haystack[count] == needle[found])
-			++found;
-		else if (found > 0)
-			found = 0;
-		count++;
+		if (!ft_strncmp((char *)(haystack + count), (char *)needle, foundlen))
+			return ((char *)(haystack + count));
+		++count;
 	}
 	return (NULL);
 }
