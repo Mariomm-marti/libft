@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/12 18:54:21 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/12 19:25:23 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/01/17 14:15:08 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void		ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	if (!f || !lst)
 		return ;
-	if (f)
-		f(lst->content);
+	f(lst->content);
 	ft_lstiter(lst->next, f);
 }

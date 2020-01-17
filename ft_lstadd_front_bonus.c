@@ -6,12 +6,11 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 18:51:29 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/16 16:00:12 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/01/17 12:00:55 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 /*
 **	DESCRIPTION
@@ -23,9 +22,8 @@
 
 void	ft_lstadd_front(t_list **alst, t_list *new)
 {
-	if (alst && new)
-	{
-		new->next = *alst;
-		*alst = new;
-	}
+	if (!new)
+		return ;
+	new->next = *alst;
+	*alst = new;
 }
