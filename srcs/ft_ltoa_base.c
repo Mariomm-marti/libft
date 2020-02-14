@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/11 00:06:01 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/02/14 01:56:26 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/02/14 02:07:57 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ char	*ft_ltoa_base(unsigned long int num, const char *base)
 		temp_index++;
 		num /= count;
 	}
+	if (temp_index == 0)
+		*(temp + temp_index++) = '0';
 	*(temp + temp_index) = 0;
 	count = -1;
 	while (--temp_index >= ++count)
