@@ -3,15 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 10:50:30 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/02/14 01:55:08 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/05/17 20:02:08 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+# ifndef INT_MAX
+#  define INT_MAX 2147483647
+# endif
 
 # include <stddef.h>
 
@@ -60,14 +64,16 @@ int				ft_isprint(int c);
 int				ft_toupper(int c);
 int				ft_tolower(int c);
 
+int				ft_logn(t_byte const base, unsigned int const num);
+
 char			*ft_substr(const char *s, unsigned int start, size_t len);
 char			*ft_strjoin(const char *s1, const char *s2);
 char			*ft_strtrim(const char *s1, const char *set);
 char			**ft_split(const char *s, char c);
 char			*ft_itoa(int n);
-char			*ft_itoa_base(int num, const char *base);
 char			*ft_ltoa_base(unsigned long int num, const char *base);
 char			*ft_strmapi(const char *s, char (*f)(unsigned int, char));
+int				ft_itoa_base(char *out, long long int num, char const *base);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/11 00:06:01 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/02/11 02:08:56 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/05/17 22:34:01 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,40 +14,29 @@
 
 /*
 **	DESCRIPTION
-**		Converts given number _num_ into ASCII nul-terminated string using
-**		_base_.
-**		<WARNING: This function doesn't check for valid base, it just checks
-**		for a base higher than 2 (binary)>
+**		Converts integer _num_ to ASCII C-string using _base_
+**		and sends it to _out_ so heap isn't needed
+**		_out_ WILL NOT BE NUL-TERMINATED
 **	RETURN VALUES
-**		Returns NULL if no base is given or base length is less than binary,
-**		or a heap allocated string with the result
+**		Number of characters modified in _out_
 */
 
-char	*ft_itoa_base(int num, const char *base)
+int		ft_itoa_base(char *out, long long int num, char const *base)
 {
-	char	temp[66];
-	int		temp_index;
-	int		count;
-	int		aux;
+	t_byte register const	base_length = ft_strlen(base);
+	t_byte register			out_ch;
+	t_byte register			len_ch;
 
-	if (!base || (count = ft_strlen(base)) < 2)
-		return (NULL);
-	temp_index = 0;
-	if (num < 0 && (num = -num))
-		*(temp + temp_index++) = '-';
-	while (count >= 2 && num > 0)
+	out_ch = num < 0;
+	if (out_ch && (num = -num))
+		*out = '-';
+	len_ch = ft_logn(base_length, num) + out_ch + 1;
+	while (out_ch < len_ch)
 	{
-		*(temp + temp_index) = *(base + (num % count));
-		temp_index++;
-		num /= count;
+		*(out + len_ch - out_ch - (*out != 45)) = *(base + (num % base_length));
+		num /= base_length;
+		out_ch++;
 	}
-	*(temp + temp_index) = 0;
-	count = (*temp == '-' ? 0 : -1);
-	while (--temp_index >= ++count)
-	{
-		aux = *(temp + count);
-		*(temp + count) = *(temp + temp_index);
-		*(temp + temp_index) = aux;
-	}
-	return (ft_strdup(temp));
+	*(out + out_ch) = 0;
+	return (len_ch);
 }
