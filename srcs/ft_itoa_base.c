@@ -6,7 +6,7 @@
 /*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/11 00:06:01 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/05/17 22:34:01 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/07/10 18:09:35 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@
 
 int		ft_itoa_base(char *out, long long int num, char const *base)
 {
-	t_byte register const	base_length = ft_strlen(base);
-	t_byte register			out_ch;
-	t_byte register			len_ch;
+	unsigned char register const	base_length = ft_strlen(base);
+	unsigned char register			out_ch;
+	unsigned char register			len_ch;
 
 	out_ch = num < 0;
 	if (out_ch && (num = -num))
