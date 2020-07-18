@@ -6,7 +6,7 @@
 /*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 19:59:58 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/07/18 09:32:17 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/07/18 22:25:33 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@
 **		Logarithm of _num_
 */
 
-int		ft_logn(t_byte const base, unsigned int const num)
+int		ft_logn(t_byte const base, unsigned long int const num)
 {
-	long long int	current_num;
-	t_byte			steps;
+	unsigned long int	current_num;
+	t_byte				steps;
 
 	current_num = base;
 	steps = 0;
-	while (current_num < num && current_num < INT_MAX && (current_num *= base))
+	while (current_num < num && (current_num *= base))
 		steps++;
 	return (steps);
 }

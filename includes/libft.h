@@ -6,7 +6,7 @@
 /*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 10:50:30 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/07/18 09:35:49 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/07/18 22:21:36 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int				ft_isprint(int c);
 int				ft_toupper(int c);
 int				ft_tolower(int c);
 
-int				ft_logn(t_byte const base, unsigned int const num);
+int				ft_logn(t_byte const base, unsigned long int const num);
 
 char			*ft_substr(const char *s, unsigned int start, size_t len);
 char			*ft_strjoin(const char *s1, const char *s2);
