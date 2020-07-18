@@ -19,7 +19,7 @@ OBJS_BONUS = ${SRCS_BONUS:.c=.o}
 NAME		= libft.a
 
 .c.o:		
-			@clang -Wall -Werror -Wextra -c $< -o ${<:.c=.o} -I includes/
+			@clang -Wall -Werror -Wextra -c $< -o ${<:.c=.o} -I includes/ -O3 -march=skylake
 
 $(NAME):	${OBJS}
 			@echo ">> Dependency 'libft' is being compiled..."
