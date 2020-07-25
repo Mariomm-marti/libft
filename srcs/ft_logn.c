@@ -6,7 +6,7 @@
 /*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 19:59:58 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/07/18 22:25:33 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/07/26 01:48:42 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int		ft_logn(t_byte const base, unsigned long int const num)
 
 	current_num = base;
 	steps = 0;
-	while (current_num < num && (current_num *= base))
+	while (current_num <= num && (current_num *= base))
 		steps++;
 	return (steps);
 }
