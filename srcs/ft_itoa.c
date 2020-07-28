@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/12 20:44:01 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/14 12:04:06 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/07/28 16:36:27 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,8 @@ char		*ft_itoa(int n)
 	while (nl > 0)
 	{
 		*(str + count) = (nl > 9) ? nl % 10 + '0' : nl + '0';
-		count = (nl > 9 ? --count : count);
+		if (nl > 9)
+			count = count - 1;
 		nl /= 10;
 	}
 	return (str);
