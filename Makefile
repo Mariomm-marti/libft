@@ -6,43 +6,41 @@
 #    By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/10 15:21:05 by mmartin-          #+#    #+#              #
-#    Updated: 2020/08/09 11:36:16 by mmartin-         ###   ########.fr        #
+#    Updated: 2020/08/09 13:23:55 by mmartin-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 ECHO_MSG	= @echo "\x1b[1;45;mlibft\x1b[0;90m $(1)...\x1b[0m"
 
-SRCS		= $(shell find srcs/ -name "*.c" ! -name "*_bonus.c")
-OBJS		= ${SRCS:.c=.o}
+LIBFT_D		= srcs
+LIBFT_I		= includes
 
-SRCS_BONUS	= $(shell find srcs/ -name "*_bonus.c")
-OBJS_BONUS	= ${SRCS_BONUS:.c=.o}
+SRCS		= $(shell find $(LIBFT_D) -type f -name "*.c")
+OBJS		= $(SRCS:.c=.o)
 
+PATH		= $(shell pwd)
 NAME		= libft.a
 
-.c.o:		
-			@clang -Wall -Werror -Wextra -c $< -o ${<:.c=.o} -O3 -march=skylake
+%.o : %.c		
+			@clang -Wall -Werror -Wextra -c $< -o $@ -O3 -march=skylake
 
-$(NAME):	${OBJS}
+$(NAME):	$(OBJS)
 			$(call ECHO_MSG,"compiling")
-			@ar -rc ${NAME} ${OBJS}
-			@ranlib ${NAME}
+			@ar -rcs $(NAME) $(OBJS)
 
-all:		${NAME}
+all:		$(NAME)
 
-bonus:		${OBJS} ${OBJS_BONUS}
-			$(call ECHO_MSG,"compiling with bonus")
-			@ar -rc ${NAME} ${OBJS} ${OBJS_BONUS}
-			@ranlib ${NAME}
+# Deprecated, maintained for project integrity
+bonus:		$(NAME)
 
 clean:		
 			$(call ECHO_MSG,"deleting objects")
-			@rm -f ${OBJS} ${OBJS_BONUS}
+			@rm -f $(OBJS)
 
 fclean:		clean
 			$(call ECHO_MSG,"deleting library")
-			@rm -f ${NAME}
+			@rm -f $(PATH)/$(NAME)
 
-re:			fclean bonus
+re:			fclean $(NAME)
 
-.PHONY:		all clean fclean re bonus
+.PHONY:		all bonus clean fclean re
