@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 15:45:41 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/16 13:25:36 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/08/09 10:45:19 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 **		Returns first ocurrence of _c_ in _s_ or NULL if not found
 */
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strchr(char const *s, int c)
 {
 	size_t count;
 

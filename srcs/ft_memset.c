@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 10:49:47 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/16 10:31:18 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/08/08 22:43:47 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,17 @@
 
 /*
 **	DESCRIPTION
-**		Writes _len_ bytes at _b_ with _c_
+**		Writes _len_ bytes at _b_ using char _c_
 **	RETURN VALUES
 **		Returns _b_
 */
 
-void	*ft_memset(void *b, int c, size_t len)
+void	*ft_memset(void *b, int const c, size_t len)
 {
-	size_t count;
-
-	count = 0;
-	while (count < len)
-	{
-		*(unsigned char*)(b + count) = (unsigned char)c;
-		count++;
-	}
+	if (!b)
+		return (b);
+	while (--len > 0)
+		*(unsigned char *)(b + len) = (unsigned char)c;
+	*(unsigned char *)b = (unsigned char)c;
 	return (b);
 }

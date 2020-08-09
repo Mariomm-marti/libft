@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 14:13:12 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/16 11:17:44 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/08/09 10:30:38 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 **		Returns first ocurrence of _c_ in _s_, or NULL if not found
 */
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	*ft_memchr(void const *s, int c, size_t n)
 {
 	size_t count;
 

@@ -6,7 +6,7 @@
 /*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 10:50:30 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/07/18 22:21:36 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/08/08 22:08:02 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,13 @@
 **		letter = (t_byte)letter >> 6
 */
 
+typedef unsigned char	t_byte;
+
 typedef struct	s_list
 {
 	void			*content;
 	struct s_list	*next;
 }				t_list;
-
-typedef unsigned char	t_byte;
 
 void			*ft_memset(void *b, int c, size_t len);
 void			*ft_memcpy(void *dst, const void *src, size_t n);

@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 15:57:56 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/16 14:09:29 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/08/09 10:46:15 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 **		Returns index of last found _c_ in _s_, or NULL if not found
 */
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strrchr(char const *s, int c)
 {
 	int count;
 

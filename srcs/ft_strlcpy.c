@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 17:38:48 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/16 11:51:35 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/08/09 10:44:42 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 **		Returns the length of _src_
 */
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcpy(char *dst, char const *src, size_t dstsize)
 {
 	size_t	count;
 	size_t	srclen;
