@@ -6,7 +6,7 @@
 #    By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/10 15:21:05 by mmartin-          #+#    #+#              #
-#    Updated: 2020/08/09 13:23:55 by mmartin-         ###   ########.fr        #
+#    Updated: 2020/08/09 13:27:28 by mmartin-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ NAME		= libft.a
 
 $(NAME):	$(OBJS)
 			$(call ECHO_MSG,"compiling")
-			@ar -rcs $(NAME) $(OBJS)
+			@ar -rcs $(PATH)/$(NAME) $(OBJS)
 
 all:		$(NAME)
 
