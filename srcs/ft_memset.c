@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 10:49:47 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/08/08 22:43:47 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/08/25 00:58:00 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 void	*ft_memset(void *b, int const c, size_t len)
 {
-	if (!b)
+	if (!b || !len)
 		return (b);
 	while (--len > 0)
 		*(unsigned char *)(b + len) = (unsigned char)c;

@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 18:51:29 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/17 12:00:55 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/08/25 18:48:28 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,8 @@
 **		None
 */
 
-void	ft_lstadd_front(t_list **alst, t_list *new)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (!new)
-		return ;
-	new->next = *alst;
-	*alst = new;
+	new->next = *lst;
+	*lst = new;
 }
