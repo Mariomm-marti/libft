@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 17:09:46 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/16 11:22:14 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/08/28 19:44:47 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 **		Returns length of string _s_
 */
 
-size_t	ft_strlen(const char *s)
+size_t	ft_strlen(char const *s)
 {
 	size_t	count;
 

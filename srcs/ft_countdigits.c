@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 12:57:47 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/02/28 12:08:43 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/08/27 05:41:34 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,28 @@
 
 size_t		ft_countdigits(int num)
 {
-	size_t count;
+	t_byte	neg;
 
-	count = 0;
-	if (num == 0)
-		return (1);
+	neg = num < 0;
 	if (num < 0)
-	{
-		num = -num;
-		count++;
-	}
-	while (num > 0)
-	{
-		count++;
-		num /= 10;
-	}
-	return (count);
+		num = num == INT_MIN ? INT_MAX : -num;
+	if (num < 10)
+		return (1 + neg);
+	if (num < 100)
+		return (2 + neg);
+	if (num < 1000)
+		return (3 + neg);
+	if (num < 10000)
+		return (4 + neg);
+	if (num < 100000)
+		return (5 + neg);
+	if (num < 1000000)
+		return (6 + neg);
+	if (num < 10000000)
+		return (7 + neg);
+	if (num < 100000000)
+		return (8 + neg);
+	if (num < 1000000000)
+		return (9 + neg);
+	return (10 + neg);
 }

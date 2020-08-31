@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 19:46:41 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/17 13:08:58 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/08/27 22:21:39 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if (!new)
+	if (!lst || !new)
 		return ;
 	if (!*lst)
 	{

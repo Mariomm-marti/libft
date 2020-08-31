@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 20:59:02 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/16 14:11:44 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/08/28 18:55:34 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,26 +19,24 @@
 **		Return the number _str_ in int format
 */
 
-int		ft_atoi(const char *str)
+int		ft_atoi(char const *str)
 {
 	long	result;
 	int		sign;
 
 	result = 0;
-	sign = 1;
-	while (*str == '\t' || *str == '\n' || *str == '\v' || *str == '\f' ||
-			*str == '\r' || *str == ' ')
+	if (!str)
+		return (0);
+	while (ft_isspace(*str))
 		str++;
-	if (*str == '-')
-		sign *= -1;
-	if (*str == '-' || *str == '+')
-		str++;
-	while (*str >= '0' && *str <= '9')
+	sign = *str == '-' ? -1 : 1;
+	str += *str == '-' || *str == '+';
+	while (ft_isdigit(*str))
 	{
 		result = result * 10 + (*str - 48);
-		if ((result * sign) > 2147483647)
+		if ((result * sign) > INT_MAX)
 			return (-1);
-		if ((result * sign) < -2147483648)
+		if ((result * sign) < INT_MIN)
 			return (0);
 		str++;
 	}

@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 13:02:17 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/08/25 04:02:42 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/08/28 19:08:52 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 
 void	*ft_memmove(void *dst, void const *src, size_t len)
 {
-	if (dst == NULL && src == NULL)
+	if (!dst || !src)
 		return (NULL);
 	if (len == 0)
 		return (dst);

@@ -6,31 +6,13 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/12 20:44:01 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/07/28 16:36:27 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/08/28 18:44:35 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
-
-/*
-**	DESCRIPTION
-**		It requires the _original_ int to check for 0 (as zero is one digit).
-**		Calculates the number of digits by dividing _n_ / 10 (decimal base)
-**	RETURN VALUES
-**		Number of digits the number has, a number below zero would add one more
-**		digit
-*/
-
-static int	digit_number(long n, int original)
-{
-	if (original == 0)
-		return (1);
-	if (n < 0)
-		return (digit_number(n * -1, original) + 1);
-	if (n > 0)
-		return (digit_number(n / 10, original) + 1);
-	return (0);
-}
+#include <stdlib.h>
+#include <stdio.h>
 
 /*
 **	DESCRIPTION
@@ -51,28 +33,19 @@ static int	digit_number(long n, int original)
 
 char		*ft_itoa(int n)
 {
-	long	nl;
 	int		count;
 	char	*str;
 
-	nl = n;
-	if ((str = ft_calloc(1, digit_number(nl, n) + 1)) == NULL)
-		return (NULL);
-	if (n == 0)
-	{
-		*str = '0';
-		return (str);
-	}
-	if (n < 0)
+	if (n == INT_MIN || !(str = (char *)ft_calloc(1, ft_countdigits(n) + 1)))
+		return (n == INT_MIN ? ft_strdup("-2147483648") : NULL);
+	count = ft_countdigits(n) - (n < 0);
+	if (n < 0 && (n = -n))
 		*str = '-';
-	nl = (nl < 0 ? nl * -1 : nl);
-	count = (n < 0 ? digit_number(nl, n) : digit_number(nl, n) - 1);
-	while (nl > 0)
+	while (count > 0)
 	{
-		*(str + count) = (nl > 9) ? nl % 10 + '0' : nl + '0';
-		if (nl > 9)
-			count = count - 1;
-		nl /= 10;
+		*(str + count - (*str != '-')) = n % 10 + '0';
+		n = n / 10;
+		count--;
 	}
 	return (str);
 }

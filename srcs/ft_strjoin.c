@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 12:43:49 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/16 14:28:18 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/08/28 20:01:15 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,29 +20,20 @@
 **		Returns the copy of _s1_ and _s2_ into only one string
 */
 
-char	*ft_strjoin(const char *s1, const char *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	count;
-	size_t	count_s2;
 	char	*alloc;
+	char	*alloch;
 
 	if (!s1 || !s2)
 		return (NULL);
-	if ((alloc = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1)) == NULL)
+	if (!(alloc = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1)))
 		return (NULL);
-	count = 0;
-	while (*(s1 + count))
-	{
-		*(alloc + count) = *(s1 + count);
-		count++;
-	}
-	count_s2 = 0;
-	while (*(s2 + count_s2))
-	{
-		*(alloc + count) = *(s2 + count_s2);
-		count++;
-		count_s2++;
-	}
-	*(alloc + count) = 0;
-	return (alloc);
+	alloch = alloc;
+	while (*s1)
+		*alloc++ = *s1++;
+	while (*s2)
+		*alloc++ = *s2++;
+	*alloc = 0;
+	return (alloch);
 }
