@@ -6,7 +6,7 @@
 /*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 10:50:30 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/08/27 04:59:05 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/10/15 19:05:36 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,7 @@
 
 /*
 **	NOTE
-**		Only used when looking for 8bits, for instance, if you want to check
-**		a char and not it bits, use explicit casting
+**		Only used when looking for explicit 8-bit data, use casting otherwise
 **	EXAMPLE
 **		if ((unsigned char)letter == 48)
 **		letter = (t_byte)letter >> 6
@@ -40,20 +39,29 @@ typedef struct	s_list
 	struct s_list	*next;
 }				t_list;
 
+/*
+**	Memory handler prototypes
+*/
+
 void			*ft_memset(void *b, int c, size_t len);
 void			*ft_memcpy(void *dst, const void *src, size_t n);
 void			*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void			*ft_memmove(void *dst, const void *src, size_t len);
 void			*ft_memchr(const void *s, int c, size_t n);
+void			*ft_memdup(void const *s, int n);
 void			*ft_calloc(size_t count, size_t size);
-void			*ft_strdup(const char *s1);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
 void			ft_bzero(void *s, size_t n);
+
+/*
+**	Simple native data prototypes
+*/
 
 size_t			ft_strlen(const char *s);
 size_t			ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t			ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t			ft_countdigits(int num);
+void			*ft_strdup(const char *s1);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strrchr(const char *s, int c);
 char			*ft_strnstr(const char *haystack,
@@ -70,19 +78,32 @@ int				ft_isspace(int c);
 int				ft_toupper(int c);
 int				ft_tolower(int c);
 
+/*
+**	Simple math function prototypes
+*/
+
 int				ft_logn(t_byte const base, unsigned long int const num);
 
+/*
+**	Part 2 - complex function (string/fd handles) prototypes
+*/
+
+char			**ft_split(int *word_count, char *s, char c);
 char			*ft_substr(const char *s, unsigned int start, size_t len);
 char			*ft_strjoin(const char *s1, const char *s2);
 char			*ft_strtrim(const char *s1, const char *set);
-char			**ft_split(const char *s, char c);
 char			*ft_itoa(int n);
 char			*ft_strmapi(const char *s, char (*f)(unsigned int, char));
+int				ft_split_free(char **tab);
 int				ft_itoa_base(char *out, long long int num, char const *base);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
+
+/*
+**	List function prototypes
+*/
 
 t_list			*ft_lstnew(void *content);
 t_list			*ft_lstlast(t_list *lst);
