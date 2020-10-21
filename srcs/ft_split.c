@@ -6,7 +6,7 @@
 /*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 20:42:52 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/10/21 17:29:40 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/10/21 20:21:30 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,17 +59,16 @@ char	**ft_split(int *word_count, char *s, char c)
 
 int		ft_split_free(char **tab)
 {
-	char **next;
-	char **copy;
+	size_t	count;
 
-	if (!tab || !*tab)
+	if (!tab)
 		return (1);
-	next = tab;
-	while (*next)
+	count = 0;
+	while (*(tab + count))
 	{
-		copy = next;
-		next = next + 1;
-		free(*copy);
+		free(*(tab + count));
+		count++;
 	}
+	free(tab);
 	return (0);
 }
