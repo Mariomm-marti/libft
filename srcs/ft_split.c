@@ -6,7 +6,7 @@
 /*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 20:42:52 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/10/15 20:06:33 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/10/21 17:29:40 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,5 @@ int		ft_split_free(char **tab)
 		next = next + 1;
 		free(*copy);
 	}
-	free(tab);
 	return (0);
 }
