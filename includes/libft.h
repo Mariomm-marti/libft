@@ -6,7 +6,7 @@
 /*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 10:50:30 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/10/23 21:36:16 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/10/23 21:57:02 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ int				ft_logn(t_byte const base, unsigned long int const num);
 **	Part 2 - complex function (string/fd handles) prototypes
 */
 
-char			**ft_split(int *word_count, char *s, char c);
+char			**ft_split(char *s, char c);
 char			*ft_substr(const char *s, unsigned int start, size_t len);
 char			*ft_strjoin(const char *s1, const char *s2);
 char			*ft_strtrim(const char *s1, const char *set);

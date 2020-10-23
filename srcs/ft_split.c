@@ -6,7 +6,7 @@
 /*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 20:42:52 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/10/23 21:16:24 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/10/23 21:56:54 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 **		heap-allocated
 */
 
-char	**ft_split(int *word_count, char *s, char c)
+char	**ft_split(char *s, char c)
 {
 	char	**tab;
 	char	*word;
@@ -30,13 +30,13 @@ char	**ft_split(int *word_count, char *s, char c)
 
 	if (!(word = s))
 		return (NULL);
-	*word_count = *s == c || !*s ? 0 : 1;
+	i = *s == c || !*s ? 0 : 1;
 	while (*++s)
 		if (*s == c && *(s + 1) && *(s + 1) != c)
-			*word_count += 1;
-	if (!(tab = (char **)malloc(sizeof(char *) * (*word_count + 1))))
+			i += 1;
+	if (!(tab = (char **)malloc(sizeof(char *) * (i + 1))))
 		return (NULL);
-	*(tab + *word_count) = NULL;
+	*(tab + i) = NULL;
 	s = word - 1;
 	i = 0;
 	while (*++s)
