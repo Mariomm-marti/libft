@@ -6,7 +6,7 @@
 /*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 10:50:30 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/10/15 19:05:36 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/10/23 21:36:16 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,7 @@ char			*ft_strtrim(const char *s1, const char *set);
 char			*ft_itoa(int n);
 char			*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 int				ft_split_free(char **tab);
+int				ft_split_count(char **tab);
 int				ft_itoa_base(char *out, long long int num, char const *base);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
