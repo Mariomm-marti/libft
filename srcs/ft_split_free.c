@@ -6,7 +6,7 @@
 /*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/23 21:17:12 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/10/23 21:17:30 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/10/26 02:59:46 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int		ft_split_free(char **tab)
 	size_t	count;
 
 	if (!tab)
-		return (1);
+		return (0);
 	count = 0;
 	while (*(tab + count))
 	{
@@ -33,5 +33,5 @@ int		ft_split_free(char **tab)
 		count++;
 	}
 	free(tab);
-	return (0);
+	return (1);
 }
