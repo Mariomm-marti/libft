@@ -6,7 +6,7 @@
 /*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/14 20:58:21 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/11/16 22:35:07 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/11/19 22:01:17 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,15 @@ typedef struct	s_vec
 	double			z;
 }				t_vec;
 
+typedef double	t_mat44[16];
+
 t_vec			*vec_clone(t_vec const *in);
-t_vec			*vec_add(t_vec const *vec, t_vec const *add);
-t_vec			*vec_sub(t_vec const *vec, t_vec const *sub);
-t_vec			*vec_mult(t_vec const *vec, double factor);
-t_vec			*vec_cross(t_vec const *vec, t_vec const *crossed);
-double			vec_scale(t_vec const *vec, t_vec const *scalar);
+double			vec_dot(t_vec const *vec, t_vec const *scalar);
 double			vec_length(t_vec const *vec);
 void			vec_normalize(t_vec const *vec);
+void			vec_add(t_vec const *vec, t_vec const *add);
+void			vec_sub(t_vec const *vec, t_vec const *sub);
+void			vec_mult(t_vec const *vec, double factor);
+void			vec_cross(t_vec const *vec, t_vec const *crossed);
 
 #endif
