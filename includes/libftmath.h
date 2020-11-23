@@ -6,7 +6,7 @@
 /*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/14 20:58:21 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/11/19 22:01:17 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/11/23 22:05:29 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ typedef struct	s_vec
 	double			z;
 }				t_vec;
 
-typedef double	t_mat44[16];
+typedef double	t_mat44[4][4];
 
 t_vec			*vec_clone(t_vec const *in);
 double			vec_dot(t_vec const *vec, t_vec const *scalar);
