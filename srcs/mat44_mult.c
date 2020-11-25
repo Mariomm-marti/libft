@@ -6,11 +6,18 @@
 /*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 20:53:42 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/11/23 22:42:48 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/11/25 22:34:31 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libftmath.h"
+
+/*
+**	DESCRIPTION
+**		Multiplies A * B and places result in _out_
+**	RETURN VALUES
+**		None
+*/
 
 void		mat44_mult(t_mat44 out, t_mat44 const a, t_mat44 const b)
 {

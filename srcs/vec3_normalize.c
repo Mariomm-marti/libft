@@ -1,28 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vec_add.c                                          :+:      :+:    :+:   */
+/*   vec3_normalize.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/16 22:21:10 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/11/21 22:52:52 by mmartin-         ###   ########.fr       */
+/*   Created: 2020/11/25 21:14:47 by mmartin-          #+#    #+#             */
+/*   Updated: 2020/11/25 21:38:01 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libftmath.h"
+#include <math.h>
 
 /*
 **	DESCRIPTION
-**		Add values and place them in _out_, if _vec_ is not longer neeeded
-**		give _out_ as _vec_ so it is modified
+**		Normalizes given _a_ and places it into _out_
 **	RETURN VALUES
 **		None
 */
 
-void		vec_add(t_vec *out, t_vec const *vec, t_vec const *add)
+void		vec3_normalize(t_vec3 out, t_vec3 const vec)
 {
-	vec->x = vec->x + add->x;
-	vec->y = vec->y + add->y;
-	vec->z = vec->z + add->z;
+	double		a_len;
+
+	a_len = vec[0] * vec[0] + vec[1] * vec[1] + vec[2] * vec[2];
+	if (a_len > 0)
+	{
+		a_len = 1 / sqrt(a_len);
+		out[0] = vec[0] * a_len;
+		out[1] = vec[1] * a_len;
+		out[2] = vec[2] * a_len;
+		return ;
+	}
+	out[0] = vec[0];
+	out[1] = vec[1];
+	out[2] = vec[2];
 }

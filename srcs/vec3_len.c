@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vec_sub.c                                          :+:      :+:    :+:   */
+/*   vec3_len.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/16 22:29:20 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/11/19 20:30:29 by mmartin-         ###   ########.fr       */
+/*   Created: 2020/11/25 21:05:15 by mmartin-          #+#    #+#             */
+/*   Updated: 2020/11/25 21:08:03 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libftmath.h"
+#include <math.h>
 
 /*
 **	DESCRIPTION
-**		Substracts _sub_ from _vec_, not saving original _vec_ and updating
-**		it values. To preserve the original _vec_, consider using vec_clone
+**		Gets the length of _in_
 **	RETURN VALUES
-**		None
+**		Real number, length of _in_
 */
 
-void		vec_sub(t_vec const *vec, t_vec const *sub)
+double		vec3_len(t_vec3 const in)
 {
-	vec->x = vec->x - sub->x;
-	vec->y = vec->y - sub->y;
-	vec->z = vec->z - sub->z;
+	return (sqrt(in[0] * in[0] + in[1] * in[1] + in[2] * in[2]));
 }

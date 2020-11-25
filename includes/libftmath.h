@@ -6,29 +6,24 @@
 /*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/14 20:58:21 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/11/23 22:05:29 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/11/25 22:33:15 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFTMATH_H
 # define LIBFTMATH_H
 
-typedef struct	s_vec
-{
-	double			x;
-	double			y;
-	double			z;
-}				t_vec;
-
+typedef double	t_vec3[3];
 typedef double	t_mat44[4][4];
 
-t_vec			*vec_clone(t_vec const *in);
-double			vec_dot(t_vec const *vec, t_vec const *scalar);
-double			vec_length(t_vec const *vec);
-void			vec_normalize(t_vec const *vec);
-void			vec_add(t_vec const *vec, t_vec const *add);
-void			vec_sub(t_vec const *vec, t_vec const *sub);
-void			vec_mult(t_vec const *vec, double factor);
-void			vec_cross(t_vec const *vec, t_vec const *crossed);
+double			vec3_dot(t_vec3 const a, t_vec3 const b);
+double			vec3_len(t_vec3 const in);
+void			vec3_add(t_vec3 out, t_vec3 const a, t_vec3 const b);
+void			vec3_sub(t_vec3 out, t_vec3 const a, t_vec3 const b);
+void			vec3_scale(t_vec3 out, t_vec3 const vec, double const factor);
+void			vec3_normalize(t_vec3 out, t_vec3 const vec);
+void			vec3_cross(t_vec3 out, t_vec3 const a, t_vec3 const b);
+
+void			mat44_mult(t_mat44 out, t_mat44 const a, t_mat44 const b);
 
 #endif

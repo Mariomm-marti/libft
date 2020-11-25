@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vec_dot.c                                          :+:      :+:    :+:   */
+/*   vec3_mult.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/19 20:30:00 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/11/19 20:31:45 by mmartin-         ###   ########.fr       */
+/*   Created: 2020/11/25 22:24:42 by mmartin-          #+#    #+#             */
+/*   Updated: 2020/11/25 22:33:45 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libftmath.h"
-
 /*
 **	DESCRIPTION
-**		Computes the dot (or scalar product) of two vectors
+**		Scales a vector _vec_
 **	RETURN VALUES
-**		Real number of applying dot operation to _vec_
+**		None
 */
 
-double		vec_dot(t_vec const *vec, t_vec const *scalar)
+void		vec3_mult(t_vec3 out, t_vec3 const vec, double const factor)
 {
-	return (vec->x * scalar->x + vec->y * scalar->y + vec->z * scalar->z);
+	out[0] = vec[0] * factor;
+	out[1] = vec[1] * factor;
+	out[2] = vec[2] * factor;
 }

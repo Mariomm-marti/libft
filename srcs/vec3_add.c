@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vec_mult.c                                         :+:      :+:    :+:   */
+/*   vec3_add.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/16 22:32:12 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/11/19 20:29:05 by mmartin-         ###   ########.fr       */
+/*   Created: 2020/11/25 20:58:56 by mmartin-          #+#    #+#             */
+/*   Updated: 2020/11/25 21:02:11 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libftmath.h"
-
 /*
 **	DESCRIPTION
-**		Multiply _vec_ by _factor_, not saving _vec_ and updating it values.
-**		To preserve the original _vec_, consider using vec_clone
+**		Adds two vectors _a_ and _b_
 **	RETURN VALUES
 **		None
 */
 
-void		vec_mult(t_vec const *vec, double const factor)
+void		vec3_add(t_vec3 out, t_vec3 const a, t_vec3 const b)
 {
-	vec->x = vec->x * factor;
-	vec->y = vec->y * factor;
-	vec->z = vec->z * factor;
+	out[0] = a[0] + b[0];
+	out[1] = a[1] + b[1];
+	out[2] = a[2] + b[2];
 }
