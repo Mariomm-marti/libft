@@ -6,16 +6,19 @@
 /*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 22:22:59 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/11/30 22:47:02 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/12/20 16:31:13 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//     i j k w
-//   
-// a   2 3 4 0    4   
-// b   1 4 5 0    5
-// c   3 5 6 0    6
-// ?   0 0 0 1
+/*
+**	DESCRIPTION
+**		Transforms _a_ using _b_. Instead of using _b_ as a regular vector,
+**		it is considered to be a point. That's why a normal transformation
+**		doesn't apply and we assume _b_ has a 4th value to be a homogeneous
+**		point
+**	RETURN VALUES
+**		None
+*/
 
 void		mat44_point_trans(t_vec3 out, t_mat44 const a, t_vec3 const b)
 {

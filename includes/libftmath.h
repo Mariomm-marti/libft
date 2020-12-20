@@ -6,7 +6,7 @@
 /*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/14 20:58:21 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/11/25 22:33:15 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/12/20 16:34:58 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@ void			vec3_scale(t_vec3 out, t_vec3 const vec, double const factor);
 void			vec3_normalize(t_vec3 out, t_vec3 const vec);
 void			vec3_cross(t_vec3 out, t_vec3 const a, t_vec3 const b);
 
+void			mat44_init_identity(t_mat44 out);
+void			mat44_init_value(t_mat44 out, double const value);
 void			mat44_mult(t_mat44 out, t_mat44 const a, t_mat44 const b);
+void			mat44_point_trans(t_vec3 out, t_mat44 const a, t_vec3 const b);
+void			mat44_inverse(t_mat44 out, t_mat44 const a);
 
 #endif
