@@ -6,37 +6,32 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 16:17:09 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/12/20 17:45:33 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/12/21 21:26:38 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libftmath.h"
+#include <math.h>
 
-static void	mat44_swap_column(t_mat44 mat, char first, char second)
+static double	mat44_det33(t_vec3 const a, t_vec3 const b, t_vec3 const c)
 {
-	double	temp;
+	double	ret;
 
-	temp = mat[first][0];
-	mat[first][0] = mat[second][0];
-	mat[second][0] = temp;
-	temp = mat[first][1];
-	mat[first][1] = mat[second][1];
-	mat[second][1] = temp;
-	temp = mat[first][2];
-	mat[first][2] = mat[second][2];
-	mat[second][2] = temp;
-	temp = mat[first][3];
-	mat[first][3] = mat[second][3];
-	mat[second][3] = temp;
+	ret = a[0] * (b[1] * c[2] - b[2] * c[1]);
+	ret -= b[0] * (a[1] * c[2] - a[2] * c[1]);
+	ret += c[0] * (a[1] * b[2] - a[2] * b[1]);
+	return (ret);
 }
 
-static void	mat44_
+static void		mat44_adjugate(t_mat44 out, t_mat44 const a)
+{
+
+}
 
 /*
 **	DESCRIPTION
 **		Calculates the inverse of _a_ and places it into _out_.
-**		The method used to get the inverse if the Gauss-Jordan elimination,
-**		which mainly concept is to reduce rows
+**		Uses the 
 **	RETURN VALUES
 **		None
 */
@@ -50,9 +45,14 @@ static void	mat44_
 //  id[0][2]	 id[1][2]	 id[2][2]	 id[3][2]
 //  id[0][3]	 id[1][3]	 id[2][3]	 id[3][3]
 
-void		mat44_inverse(t_mat44 out, t_mat44 const a)
+int				mat44_inverse(t_mat44 out, t_mat44 const a)
 {
 	t_mat44		id;
+}
 
-	mat44_init_identity(id);
+int		main(void)
+{
+	t_mat44		mat = {{1, 1, 1, 1}, {1, 0, 1, 1}, {1, 1, 1, 1}, {1, 5, 1, 1}};
+
+	printf("%lf\n", mat44_det33((t_vec3){5, 7, 9}, (t_vec3){9, 8, 5}, (t_vec3){1, 4, -4}));
 }
