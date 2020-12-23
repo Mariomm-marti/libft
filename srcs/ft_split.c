@@ -6,7 +6,7 @@
 /*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 20:42:52 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/10/23 21:56:54 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/12/23 13:39:07 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,6 @@ char	**ft_split(char *s, char c)
 			s = word;
 		}
 		else if (!word && (*(tab + i) = ft_substr(s, 0, ft_strchr(s, 0) - s)))
-			break ;
+			return (tab);
 	return (tab);
 }

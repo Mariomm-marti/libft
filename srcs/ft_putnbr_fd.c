@@ -6,12 +6,19 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/12 18:11:53 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/16 15:55:43 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/12/23 13:36:25 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 #include <unistd.h>
+
+/*
+**	DESCRIPTION
+**		Recursively writes _n_ into _fd_
+**	RETURN VALUES
+**		None
+*/
 
 void	ft_putnbr_fd(int n, int fd)
 {
