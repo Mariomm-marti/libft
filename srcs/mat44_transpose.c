@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vec_sub.c                                          :+:      :+:    :+:   */
+/*   mat44_transpose.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/16 22:29:20 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/11/16 22:31:13 by mmartin-         ###   ########.fr       */
+/*   Created: 2020/12/02 20:12:38 by mmartin-          #+#    #+#             */
+/*   Updated: 2020/12/02 20:36:26 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,18 @@
 
 /*
 **	DESCRIPTION
-**		Substracts _sub_ from _vec_, not saving original _vec_ and updating
-**		it values. To preserve the original _vec_, consider using vec_clone
+**		Transposes given matrix _t_ into _out_
 **	RETURN VALUES
-**		_vec_ one updated
+**		None
 */
 
-t_vec		*vec_sub(t_vec const *vec, t_vec const *sub)
+void		mat44_transpose(t_mat44 out, t_mat44 const t)
 {
-	vec->x = vec->x - sub->x;
-	vec->y = vec->y - sub->y;
-	vec->z = vec->z - sub->z;
-	return (vec);
+	unsigned char	i;
+	unsigned char	j;
+
+	i = -1;
+	while (++i < 4 && (j = -1))
+		while (++j < 4)
+			out[i][j] = t[j][i];
 }

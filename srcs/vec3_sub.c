@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vec_scale.c                                        :+:      :+:    :+:   */
+/*   vec3_sub.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/15 22:03:11 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/11/16 20:41:44 by mmartin-         ###   ########.fr       */
+/*   Created: 2020/11/25 21:03:10 by mmartin-          #+#    #+#             */
+/*   Updated: 2020/11/25 21:04:18 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libftmath.h"
-
 /*
 **	DESCRIPTION
-**		Computes the dot (or scalar product) of two vectors
+**		Substracts _b_ from _a_
 **	RETURN VALUES
-**		Real number of applying dot operation to _vec_
+**		None
 */
 
-double		vec_scale(t_vec const *vec, t_vec const *scalar)
+void		vec3_sub(t_vec3 out, t_vec3 const a, t_vec3 const b)
 {
-	return (vec->x * scalar->x + vec->y * scalar->y + vec->z * scalar->z);
+	out[0] = a[0] - b[0];
+	out[1] = a[1] - b[1];
+	out[2] = a[2] - b[2];
 }

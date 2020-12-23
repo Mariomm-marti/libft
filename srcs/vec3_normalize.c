@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vec_normalize.c                                    :+:      :+:    :+:   */
+/*   vec3_normalize.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/15 21:28:39 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/11/15 21:28:42 by mmartin-         ###   ########.fr       */
+/*   Created: 2020/11/25 21:14:47 by mmartin-          #+#    #+#             */
+/*   Updated: 2020/11/25 21:38:01 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libftmath.h"
 #include <math.h>
 
 /*
 **	DESCRIPTION
-**		Returns normalized vector _vec_
+**		Normalizes given _a_ and places it into _out_
 **	RETURN VALUES
-**		Normalized _vec_
+**		None
 */
 
-void		vec_normalize(t_vec const *vec)
+void		vec3_normalize(t_vec3 out, t_vec3 const vec)
 {
-	double		vlen;
+	double		a_len;
 
-	vlen = vec->x * vec->x + vec->y * vec->y + vec->z * vec->z;
-	if (vlen > 0)
+	a_len = vec[0] * vec[0] + vec[1] * vec[1] + vec[2] * vec[2];
+	if (a_len > 0)
 	{
-		vlen = 1 / sqrt(vlen);
-		vec->x = vec->x * vlen;
-		vec->y = vec->y * vlen;
-		vec->z = vec->z * vlen;
+		a_len = 1 / sqrt(a_len);
+		out[0] = vec[0] * a_len;
+		out[1] = vec[1] * a_len;
+		out[2] = vec[2] * a_len;
+		return ;
 	}
-	return (vec);
+	out[0] = vec[0];
+	out[1] = vec[1];
+	out[2] = vec[2];
 }

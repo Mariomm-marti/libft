@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_veclen.c                                        :+:      :+:    :+:   */
+/*   mat44_init_value.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/14 21:41:29 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/11/14 22:16:30 by mmartin-         ###   ########.fr       */
+/*   Created: 2020/12/20 16:48:01 by mmartin-          #+#    #+#             */
+/*   Updated: 2020/12/20 16:57:03 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libftmath.h"
-#include <math.h>
 
 /*
 **	DESCRIPTION
-**		Calculates the length of the given vector _vec_
+**		Initializes matrix _out_ with _value_ for each field.
+**		In most cases value will be 0 so this method is not required as
+**		0 works as the default value
 **	RETURN VALUES
-**		Magnitude of the given _vec_
+**		None
 */
 
-double		vec_length(t_vec const *vec)
+void		mat44_init_value(t_mat44 out, double const value)
 {
-	return (sqrt(vec->x * vec->x + vec->y * vec->y + vec->z * vec->z));
+	char	i;
+	char	j;
+
+	i = -1;
+	while (++i < 4 && (j = -1))
+		while (++j < 4)
+			out[i][j] = value;
 }

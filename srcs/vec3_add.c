@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vec_add.c                                          :+:      :+:    :+:   */
+/*   vec3_add.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/16 22:21:10 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/11/16 22:27:42 by mmartin-         ###   ########.fr       */
+/*   Created: 2020/11/25 20:58:56 by mmartin-          #+#    #+#             */
+/*   Updated: 2020/11/25 21:02:11 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libftmath.h"
-
 /*
 **	DESCRIPTION
-**		Adds _vec_ and _add_, not saving _vec_ and updating it values.
-**		To preserve the original _vec_, consider using vec_clone
+**		Adds two vectors _a_ and _b_
 **	RETURN VALUES
-**		_vec_ once updated
+**		None
 */
 
-t_vec		*vec_add(t_vec const *vec, t_vec const *add)
+void		vec3_add(t_vec3 out, t_vec3 const a, t_vec3 const b)
 {
-	vec->x = vec->x + add->x;
-	vec->y = vec->y + add->y;
-	vec->z = vec->z + add->z;
-	return (vec);
+	out[0] = a[0] + b[0];
+	out[1] = a[1] + b[1];
+	out[2] = a[2] + b[2];
 }
