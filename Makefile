@@ -6,11 +6,11 @@
 #    By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/10 15:21:05 by mmartin-          #+#    #+#              #
-#    Updated: 2020/12/23 13:58:00 by mmartin-         ###   ########.fr        #
+#    Updated: 2020/12/23 22:19:30 by mmartin-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-LIBFT_MSG	= @echo "\x1b[48;5;54m\x1b[38;5;15m\x1b[1m     libft\x1b[0m\x1b[0;90m $(1)\x1b[0m"
+LIBFT_MSG	= @echo "  \x1b[45m\x1b[38;2;16;19;33m\x1b[45m\x1b[01;37m      libft \x1b[0m\x1b[35m\x1b[0m\x1b[0;90m $(1)\x1b[0m"
 
 LIBFT_SRCS	= srcs/ft_memset.c \
 			  srcs/ft_memcpy.c \
@@ -84,31 +84,39 @@ LIBFT_OUT	= "."
 LIBFT_NAME	= libft.a
 
 %.o : %.c
-					@printf "\x1b[48;5;54m\x1b[38;5;15m\x1b[1m     libft\x1b[0m\x1b[0;90m Compiling $@...       \x1b[0m\r"
+					@printf "  \x1b[45m\x1b[38;2;16;19;33m\x1b[45m\x1b[01;37m      libft \x1b[0m\x1b[35m\x1b[0m\x1b[0;90m Compiling \x1b[0;35m$@...         \x1b[0m\r"
 					@clang -Wall -Werror -Wextra -c $< -o $@ -O3 -march=skylake
 
 $(LIBFT_NAME):	$(LIBFT_OBJS)
+					@echo ""
 					$(call LIBFT_MSG,"Linking objects into $(LIBFT_OUT)/$(LIBFT_NAME)")
 					@ar -rcs $(LIBFT_OUT)/$(LIBFT_NAME) $(LIBFT_OBJS)
 					$(call LIBFT_MSG,"Finished linking")
+					@echo ""
 
 math:			$(LIBFT_OBJS) $(LIBFTM_OBJS)
+					@echo ""
 					$(call LIBFT_MSG,"⚠ Compiling with mathematics library extension at $(LIBFT_OUT)/$(LIBFT_NAME)")
 					@ar -rcs $(LIBFT_OUT)/$(LIBFT_NAME) $(LIBFT_OBJS) $(LIBFTM_OBJS)
 					$(call LIBFT_MSG,"Finished linking library with mathematics extension")
+					@echo ""
 
 all:			$(LIBFT_NAME)
 
 bonus:			$(LIBFT_NAME)
 
 clean:
+					@echo ""
 					$(call LIBFT_MSG,"Deleting all objects...")
 					@rm -f $(LIBFT_OBJS) $(LIBFTM_OBJS)
 
 fclean:			clean
 					$(call LIBFT_MSG,"Deleting $(LIBFT_OUT)/$(LIBFT_NAME)...","\n")
 					@rm -f $(LIBFT_OUT)/$(LIBFT_NAME)
+					@echo ""
 
 re:				fclean $(LIBFT_NAME)
 
-.PHONY:			all bonus clean fclean re
+remath:			fclean math
+
+.PHONY:			math all bonus clean fclean re remath
