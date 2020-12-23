@@ -6,7 +6,7 @@
 #    By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/10 15:21:05 by mmartin-          #+#    #+#              #
-#    Updated: 2020/11/10 20:45:26 by mmartin-         ###   ########.fr        #
+#    Updated: 2020/12/23 13:58:00 by mmartin-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,7 +63,22 @@ LIBFT_SRCS	= srcs/ft_memset.c \
 			  srcs/ft_lstclear.c \
 			  srcs/ft_lstiter.c \
 			  srcs/ft_lstmap.c
+LIBFTM_SRCS	= srcs/vec3_dot.c \
+			  srcs/vec3_len.c \
+			  srcs/vec3_add.c \
+			  srcs/vec3_sub.c \
+			  srcs/vec3_mult.c \
+			  srcs/vec3_normalize.c \
+			  srcs/vec3_cross.c \
+			  srcs/mat44_inverse.c \
+			  srcs/mat44_init_identity.c \
+			  srcs/mat44_init_value.c \
+			  srcs/mat44_mult.c \
+			  srcs/mat44_transpose.c \
+			  srcs/mat44_point_trans.c \
+			  srcs/mat44_vec3_trans.c
 LIBFT_OBJS	= $(LIBFT_SRCS:.c=.o)
+LIBFTM_OBJS	= $(LIBFTM_SRCS:.c=.o)
 
 LIBFT_OUT	= "."
 LIBFT_NAME	= libft.a
@@ -73,17 +88,22 @@ LIBFT_NAME	= libft.a
 					@clang -Wall -Werror -Wextra -c $< -o $@ -O3 -march=skylake
 
 $(LIBFT_NAME):	$(LIBFT_OBJS)
-					$(call LIBFT_MSG,"Linking objects into $(LIBFT_OUT)/$(LIBFT_NAME)","\n")
+					$(call LIBFT_MSG,"Linking objects into $(LIBFT_OUT)/$(LIBFT_NAME)")
 					@ar -rcs $(LIBFT_OUT)/$(LIBFT_NAME) $(LIBFT_OBJS)
-					$(call LIBFT_MSG,"Finished linking","\n")
+					$(call LIBFT_MSG,"Finished linking")
+
+math:			$(LIBFT_OBJS) $(LIBFTM_OBJS)
+					$(call LIBFT_MSG,"⚠ Compiling with mathematics library extension at $(LIBFT_OUT)/$(LIBFT_NAME)")
+					@ar -rcs $(LIBFT_OUT)/$(LIBFT_NAME) $(LIBFT_OBJS) $(LIBFTM_OBJS)
+					$(call LIBFT_MSG,"Finished linking library with mathematics extension")
 
 all:			$(LIBFT_NAME)
 
 bonus:			$(LIBFT_NAME)
 
 clean:
-					$(call LIBFT_MSG,"Deleting all objects...","\n")
-					@rm -f $(LIBFT_OBJS)
+					$(call LIBFT_MSG,"Deleting all objects...")
+					@rm -f $(LIBFT_OBJS) $(LIBFTM_OBJS)
 
 fclean:			clean
 					$(call LIBFT_MSG,"Deleting $(LIBFT_OUT)/$(LIBFT_NAME)...","\n")

@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 16:38:03 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/12/20 16:58:10 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/12/23 15:44:37 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 
 void	mat44_init_identity(t_mat44 out)
 {
-	char	count;
+	unsigned char	count;
 
 	count = -1;
 	while (++count < 4)

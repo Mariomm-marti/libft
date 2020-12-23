@@ -6,7 +6,7 @@
 /*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/14 20:58:21 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/12/21 16:48:45 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/12/23 13:48:13 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ double			vec3_dot(t_vec3 const a, t_vec3 const b);
 double			vec3_len(t_vec3 const in);
 void			vec3_add(t_vec3 out, t_vec3 const a, t_vec3 const b);
 void			vec3_sub(t_vec3 out, t_vec3 const a, t_vec3 const b);
-void			vec3_scale(t_vec3 out, t_vec3 const vec, double const factor);
+void			vec3_mult(t_vec3 out, t_vec3 const vec, double const factor);
 void			vec3_normalize(t_vec3 out, t_vec3 const vec);
 void			vec3_cross(t_vec3 out, t_vec3 const a, t_vec3 const b);
 
