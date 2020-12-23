@@ -6,10 +6,11 @@
 /*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 21:14:47 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/11/25 21:38:01 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/12/23 13:59:54 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../includes/libftmath.h"
 #include <math.h>
 
 /*

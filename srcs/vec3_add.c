@@ -6,9 +6,11 @@
 /*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 20:58:56 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/11/25 21:02:11 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/12/23 13:59:25 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../includes/libftmath.h"
 
 /*
 **	DESCRIPTION

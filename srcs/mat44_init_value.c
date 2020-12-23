@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 16:48:01 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/12/20 16:57:03 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/12/23 15:44:53 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@
 
 void		mat44_init_value(t_mat44 out, double const value)
 {
-	char	i;
-	char	j;
+	unsigned char	i;
+	unsigned char	j;
 
 	i = -1;
 	while (++i < 4 && (j = -1))

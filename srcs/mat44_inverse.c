@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 16:17:09 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/12/23 13:28:24 by mmartin-         ###   ########.fr       */
+/*   Updated: 2020/12/23 14:07:27 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ static double	mat44_det33(t_vec3 const a, t_vec3 const b, t_vec3 const c)
 
 static void		mat44_adjoint(t_mat44 out, t_mat44 const a)
 {
-	char const	tab[4][3] = {{1, 2, 3}, {0, 2, 3}, {0, 1, 3}, {0, 1, 2}};
-	char		i;
-	char		j;
+	short int const	tab[4][3] = {{1, 2, 3}, {0, 2, 3}, {0, 1, 3}, {0, 1, 2}};
+	short int		i;
+	short int		j;
 
 	i = -1;
 	while (++i < 4 && (j = -1))
@@ -58,9 +58,9 @@ static void		mat44_adjoint(t_mat44 out, t_mat44 const a)
 
 int				mat44_inverse(t_mat44 out, t_mat44 const a)
 {
-	double		matrix_determinant;
-	char		i;
-	char		j;
+	double				matrix_determinant;
+	unsigned char		i;
+	unsigned char		j;
 
 	mat44_adjoint(out, a);
 	matrix_determinant = a[0][0] * out[0][0] + a[1][0] * out[0][1] +
@@ -68,9 +68,15 @@ int				mat44_inverse(t_mat44 out, t_mat44 const a)
 	if (matrix_determinant == 0.0)
 		return (0);
 	matrix_determinant = 1 / matrix_determinant;
-	i = -1;
-	while (++i < 4 && (j = -1))
+	i = 0;
+	while (i < 4 && (j = 0))
+	{
 		while (++j < 4)
+		{
 			out[i][j] = out[i][j] * matrix_determinant;
+			j++;
+		}
+		i++;
+	}
 	return (1);
 }
