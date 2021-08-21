@@ -85,7 +85,7 @@ LIBFT_NAME	= libft.a
 
 %.o : %.c
 					@printf "  \x1b[45m\x1b[38;2;16;19;33m\x1b[45m\x1b[01;37m      libft \x1b[0m\x1b[35m\x1b[0m\x1b[0;90m Compiling \x1b[0;35m$@...         \x1b[0m\r"
-					@clang -Wall -Werror -Wextra -c $< -o $@ -O3 -march=skylake
+					@clang -Wall -Werror -Wextra -c $< -o $@ -O3
 
 $(LIBFT_NAME):	$(LIBFT_OBJS)
 					@echo ""
