@@ -6,7 +6,7 @@
 /*   By: vim <vim@42urduliz.com>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 10:49:14 by vim               #+#    #+#             */
-/*   Updated: 2021/08/22 10:56:18 by vim              ###   ########.fr       */
+/*   Updated: 2021/08/22 12:38:58 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ static inline char	*get_next_word(const char *s, char c, size_t *index)
 **		List of strings terminated with NULL
 */
 
-char	**ft_split(const char *s, char c)
+char	**ft_split(char *s, char c)
 {
 	size_t	index;
 	size_t	count;
