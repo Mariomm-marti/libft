@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/12 20:44:01 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/08/28 18:44:35 by mmartin-         ###   ########.fr       */
+/*   Updated: 2021/08/21 20:28:42 by vim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,22 @@
 **		Converted number to ASCII malloc string
 */
 
-char		*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	int		count;
 	char	*str;
 
-	if (n == INT_MIN || !(str = (char *)ft_calloc(1, ft_countdigits(n) + 1)))
-		return (n == INT_MIN ? ft_strdup("-2147483648") : NULL);
+	if (n == INT_MIN)
+		return (ft_strdup("-2147483648"));
+	str = (char *)ft_calloc(1, ft_countdigits(n) + 1);
+	if (str == NULL)
+		return (NULL);
 	count = ft_countdigits(n) - (n < 0);
-	if (n < 0 && (n = -n))
+	if (n < 0)
+	{
+		n = -n;
 		*str = '-';
+	}
 	while (count > 0)
 	{
 		*(str + count - (*str != '-')) = n % 10 + '0';

@@ -6,7 +6,7 @@
 /*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 12:15:17 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/12/21 12:15:26 by mmartin-         ###   ########.fr       */
+/*   Updated: 2021/08/21 20:42:54 by vim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 **		None
 */
 
-void		mat44_point_trans(t_vec3 out, t_mat44 const a, t_vec3 const b)
+void	mat44_point_trans(t_vec3 out, t_mat44 const a, t_vec3 const b)
 {
 	double	w;
 

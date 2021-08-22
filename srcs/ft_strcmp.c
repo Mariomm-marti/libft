@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/14 14:43:10 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/08/14 15:17:42 by mmartin-         ###   ########.fr       */
+/*   Updated: 2021/08/21 20:24:47 by vim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 **		Return the difference between _s1_ and _s2_ or zero if none is found
 */
 
-int		ft_strcmp(char const *s1, char const *s2)
+int	ft_strcmp(char const *s1, char const *s2)
 {
 	if (!s1 && !s2)
 		return (1);

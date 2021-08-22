@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 15:05:59 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/08/28 19:17:08 by mmartin-         ###   ########.fr       */
+/*   Updated: 2021/08/21 20:37:45 by vim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,10 @@ void	*ft_strdup(char const *s1)
 	char	*copy;
 	int		count;
 
-	if (!s1 || !(copy = (char *)malloc(ft_strlen(s1) + 1)))
+	if (s1 == NULL)
+		return (NULL);
+	copy = malloc(ft_strlen(s1) + 1);
+	if (copy == NULL)
 		return (NULL);
 	count = -1;
 	while (*(s1 + ++count))

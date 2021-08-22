@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 22:10:21 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/02/11 01:57:10 by mmartin-         ###   ########.fr       */
+/*   Updated: 2021/08/22 10:57:00 by vim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@
 **		If valid lowercase, it corresponding uppercase. Otherwise, _c_
 */
 
-int		ft_toupper(int c)
+int	ft_toupper(int c)
 {
-	return ((c >= 'a' && c <= 'z') ? c - 32 : c);
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
+	return (c);
 }

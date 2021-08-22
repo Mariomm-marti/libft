@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 16:50:01 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/08/09 10:31:19 by mmartin-         ###   ########.fr       */
+/*   Updated: 2021/08/22 12:01:21 by vim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
 **		Return difference between _s1_ and _s2_ or 0 if they are equal
 */
 
-int		ft_memcmp(void const *s1, void const *s2, size_t n)
+int	ft_memcmp(void const *s1, void const *s2, size_t n)
 {
-	size_t count;
+	size_t	count;
 
 	if (!s1 && !s2)
 		return (0);

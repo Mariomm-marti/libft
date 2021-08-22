@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/12 18:45:19 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/12 18:52:26 by mmartin-         ###   ########.fr       */
+/*   Updated: 2021/08/22 11:01:00 by vim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
 **		None
 */
 
-void		ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list *aux;
+	t_list	*aux;
 
 	aux = *lst;
 	while (aux)

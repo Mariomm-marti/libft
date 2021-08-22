@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 12:37:27 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/08/28 19:06:11 by mmartin-         ###   ########.fr       */
+/*   Updated: 2021/08/22 10:58:45 by vim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	size_t count;
+	size_t	count;
 
 	if (dst == NULL || src == NULL)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 22:24:42 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/12/23 13:59:44 by mmartin-         ###   ########.fr       */
+/*   Updated: 2021/08/21 20:42:21 by vim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 **		None
 */
 
-void		vec3_mult(t_vec3 out, t_vec3 const vec, double const factor)
+void	vec3_mult(t_vec3 out, t_vec3 const vec, double const factor)
 {
 	out[0] = vec[0] * factor;
 	out[1] = vec[1] * factor;

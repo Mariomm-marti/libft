@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 20:59:02 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/08/28 18:55:34 by mmartin-         ###   ########.fr       */
+/*   Updated: 2021/08/21 20:37:02 by vim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 **		Return the number _str_ in int format
 */
 
-int		ft_atoi(char const *str)
+int	ft_atoi(char const *str)
 {
 	long	result;
 	int		sign;
@@ -29,7 +29,9 @@ int		ft_atoi(char const *str)
 		return (0);
 	while (ft_isspace(*str))
 		str++;
-	sign = *str == '-' ? -1 : 1;
+	sign = 1;
+	if (*str == '-')
+		sign = -1;
 	str += *str == '-' || *str == '+';
 	while (ft_isdigit(*str))
 	{

@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/12 18:11:53 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/12/23 13:36:25 by mmartin-         ###   ########.fr       */
+/*   Updated: 2021/08/22 11:01:17 by vim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	unsigned int nb;
+	unsigned int	nb;
 
 	nb = (unsigned int)n;
 	if (n < 0)

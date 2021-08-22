@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 12:09:51 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/16 21:09:07 by mmartin-         ###   ########.fr       */
+/*   Updated: 2021/08/21 20:44:02 by vim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,10 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 		return (NULL);
 	if (ft_strlen(s) < start)
 		return (ft_strdup(""));
-	len = ((ft_strlen(s + start) < len) ? ft_strlen(s + start) : len);
-	if ((allocated = (char *)malloc(len + 1)) == NULL)
+	if (ft_strlen(s + start) < len)
+		len = ft_strlen(s + start);
+	allocated = malloc(len + 1);
+	if (allocated == NULL)
 		return (NULL);
 	count = 0;
 	while (count < len)

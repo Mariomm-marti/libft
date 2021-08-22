@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vim <vim@42urduliz.com>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/09 20:42:52 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/12/23 13:39:07 by mmartin-         ###   ########.fr       */
+/*   Created: 2021/08/22 10:49:14 by vim               #+#    #+#             */
+/*   Updated: 2021/08/22 10:56:18 by vim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,37 +15,76 @@
 
 /*
 **	DESCRIPTION
-**		Allows to split _s_ using char _c_, ending in NULL pointer so it can
-**		be easily free
+**		Internal function used to calculate the number of words of a string,
+**		a word means a group of characters delimited by _c_
 **	RETURN VALUES
-**		Returns either NULL in failure, or a char ** which is each string
-**		heap-allocated
+**		Returns the number of words at _c_
 */
 
-char	**ft_split(char *s, char c)
+static inline int	get_word_number(const char *s, char c)
 {
-	char	**tab;
-	char	*word;
-	int		i;
+	size_t	count;
 
-	if (!(word = s))
+	count = *s != c;
+	while (*s)
+	{
+		if (*s == c && *(s + 1) != c && *(s + 1) != 0)
+			count++;
+		s++;
+	}
+	return (count);
+}
+
+/*
+**	DESCRIPTION
+**		Finds in _s_ the next word after _index_, return NULL if no words
+**		are found
+**	RETURN VALUES
+**		Next word, NULL if not found
+*/
+
+static inline char	*get_next_word(const char *s, char c, size_t *index)
+{
+	size_t	find_next;
+	char	*word;
+
+	while (*(s + *index) == c && *(s + *index))
+		*index = *index + 1;
+	if (*(s + *index) == 0)
 		return (NULL);
-	i = *s == c || !*s ? 0 : 1;
-	while (*++s)
-		if (*s == c && *(s + 1) && *(s + 1) != c)
-			i += 1;
-	if (!(tab = (char **)malloc(sizeof(char *) * (i + 1))))
+	find_next = *index;
+	while (*(s + find_next + 1) != c && *(s + find_next + 1))
+		find_next++;
+	word = ft_substr(s, *index, find_next - *index + 1);
+	*index = find_next + 1;
+	return (word);
+}
+
+/*
+**	DESCRIPTION
+**		Splits a string _s_ with the delimiter _c_
+**	RETURN VALUES
+**		List of strings terminated with NULL
+*/
+
+char	**ft_split(const char *s, char c)
+{
+	size_t	index;
+	size_t	count;
+	char	**tab;
+
+	if (!s)
 		return (NULL);
-	*(tab + i) = NULL;
-	s = word - 1;
-	i = 0;
-	while (*++s)
-		if (*s != c && (word = ft_strchr(s, c)))
-		{
-			*(tab + i++) = ft_substr(s, 0, word - s);
-			s = word;
-		}
-		else if (!word && (*(tab + i) = ft_substr(s, 0, ft_strchr(s, 0) - s)))
-			return (tab);
+	tab = malloc(sizeof(char *) * (get_word_number(s, c) + 1));
+	if (!tab)
+		return (NULL);
+	index = 0;
+	count = 0;
+	*(tab + count) = get_next_word(s, c, &index);
+	while (*(tab + count) != NULL)
+	{
+		count++;
+		*(tab + count) = get_next_word(s, c, &index);
+	}
 	return (tab);
 }

@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/12 19:26:23 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/12 20:30:57 by mmartin-         ###   ########.fr       */
+/*   Updated: 2021/08/22 10:58:04 by vim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ void	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	while (lst->next)
 	{
 		lst = lst->next;
-		if (!(map->next = ft_lstnew(f(lst->content))))
+		map->next = ft_lstnew(f(lst->content));
+		if (map->next == NULL)
 		{
 			ft_lstclear(&map, del);
 			return (NULL);

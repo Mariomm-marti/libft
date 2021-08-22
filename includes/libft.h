@@ -6,7 +6,7 @@
 /*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 10:50:30 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/10/23 21:57:02 by mmartin-         ###   ########.fr       */
+/*   Updated: 2021/08/21 20:24:33 by vim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@
 
 typedef unsigned char	t_byte;
 
-typedef struct	s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
-}				t_list;
+}	t_list;
 
 /*
 **	Memory handler prototypes
@@ -65,7 +65,7 @@ void			*ft_strdup(const char *s1);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strrchr(const char *s, int c);
 char			*ft_strnstr(const char *haystack,
-		const char *needle, size_t len);
+					const char *needle, size_t len);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 int				ft_strcmp(char const *s1, char const *s2);
 int				ft_atoi(const char *str);
@@ -115,6 +115,6 @@ void			ft_lstdelone(t_list *lst, void (*del)(void *));
 void			ft_lstclear(t_list **lst, void (*del)(void *));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
 void			*ft_lstmap(t_list *lst, void *(*f)(void *),
-		void (*del)(void *));
+					void (*del)(void *));
 
 #endif

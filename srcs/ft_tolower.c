@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 22:15:40 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/15 12:35:09 by mmartin-         ###   ########.fr       */
+/*   Updated: 2021/08/21 20:25:25 by vim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@
 **		Return _c_ if not valid, otherwise lowercase version of _c_
 */
 
-int		ft_tolower(int c)
+int	ft_tolower(int c)
 {
-	return ((c >= 'A' && c <= 'Z') ? c + 32 : c);
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	return (c);
 }

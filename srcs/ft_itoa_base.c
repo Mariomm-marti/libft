@@ -6,7 +6,7 @@
 /*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/11 00:06:01 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/08/28 19:03:50 by mmartin-         ###   ########.fr       */
+/*   Updated: 2021/08/22 12:03:02 by vim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 **		Number of characters modified in _out_
 */
 
-int		ft_itoa_base(char *out, long long int num, char const *base)
+int	ft_itoa_base(char *out, long long int num, char const *base)
 {
 	t_byte	base_length;
 	t_byte	out_ch;
@@ -31,8 +31,11 @@ int		ft_itoa_base(char *out, long long int num, char const *base)
 		return (0);
 	base_length = ft_strlen(base);
 	out_ch = num < 0;
-	if (out_ch && (num = -num))
+	if (out_ch)
+	{
+		num = -num;
 		*out = '-';
+	}
 	len_ch = ft_logn(base_length, num) + out_ch + 1;
 	while (out_ch < len_ch)
 	{

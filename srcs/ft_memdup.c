@@ -6,7 +6,7 @@
 /*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 21:35:28 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/09/28 21:40:34 by mmartin-         ###   ########.fr       */
+/*   Updated: 2021/08/22 12:00:27 by vim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ void	*ft_memdup(void const *s, int n)
 {
 	void	*dupped;
 
-	if (!(dupped = malloc(n)))
+	dupped = malloc(n);
+	if (dupped == NULL)
 		return (NULL);
 	while (--n >= 0)
 		*((t_byte *)dupped + n) = *((t_byte *)s + n);

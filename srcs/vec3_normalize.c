@@ -6,7 +6,7 @@
 /*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 21:14:47 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/12/23 13:59:54 by mmartin-         ###   ########.fr       */
+/*   Updated: 2021/08/22 10:58:17 by vim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 **		None
 */
 
-void		vec3_normalize(t_vec3 out, t_vec3 const vec)
+void	vec3_normalize(t_vec3 out, t_vec3 const vec)
 {
 	double		a_len;
 

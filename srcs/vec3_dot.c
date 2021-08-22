@@ -6,7 +6,7 @@
 /*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 21:10:27 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/12/23 13:58:47 by mmartin-         ###   ########.fr       */
+/*   Updated: 2021/08/21 20:44:36 by vim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 **		Real number, scalar product of _a_ and _b_
 */
 
-double		vec3_dot(t_vec3 const a, t_vec3 const b)
+double	vec3_dot(t_vec3 const a, t_vec3 const b)
 {
 	return (a[0] * b[0] + a[1] * b[1] + a[2] * b[2]);
 }

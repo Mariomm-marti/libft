@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 12:43:49 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/08/28 20:01:15 by mmartin-         ###   ########.fr       */
+/*   Updated: 2021/08/22 10:59:59 by vim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	if (!s1 || !s2)
 		return (NULL);
-	if (!(alloc = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1)))
+	alloc = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (alloc == NULL)
 		return (NULL);
 	alloch = alloc;
 	while (*s1)

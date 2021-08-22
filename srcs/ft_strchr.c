@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 15:45:41 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/08/28 19:11:35 by mmartin-         ###   ########.fr       */
+/*   Updated: 2021/08/22 11:00:32 by vim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 char	*ft_strchr(char const *s, int c)
 {
-	size_t count;
+	size_t	count;
 
 	count = 0;
 	while (s && *(s + count))

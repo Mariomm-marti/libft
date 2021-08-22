@@ -6,7 +6,7 @@
 /*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 21:44:27 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/12/23 14:00:01 by mmartin-         ###   ########.fr       */
+/*   Updated: 2021/08/22 10:58:52 by vim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 **		None
 */
 
-void		vec3_cross(t_vec3 out, t_vec3 const a, t_vec3 const b)
+void	vec3_cross(t_vec3 out, t_vec3 const a, t_vec3 const b)
 {
 	out[0] = a[1] * b[2] - a[2] * b[1];
 	out[1] = a[2] * b[0] - a[0] * b[2];

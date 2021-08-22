@@ -6,7 +6,7 @@
 /*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 21:03:10 by mmartin-          #+#    #+#             */
-/*   Updated: 2021/02/01 13:11:26 by mmartin-         ###   ########.fr       */
+/*   Updated: 2021/08/22 10:57:18 by vim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 **		None
 */
 
-void		vec3_sub(t_vec3 out, t_vec3 const a, t_vec3 const b)
+void	vec3_sub(t_vec3 out, t_vec3 const a, t_vec3 const b)
 {
 	out[0] = a[0] - b[0];
 	out[1] = a[1] - b[1];

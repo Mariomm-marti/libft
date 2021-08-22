@@ -6,7 +6,7 @@
 /*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/23 21:19:34 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/10/23 21:36:41 by mmartin-         ###   ########.fr       */
+/*   Updated: 2021/08/21 20:27:02 by vim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 **		of counted words
 */
 
-int		ft_split_count(char **tab)
+int	ft_split_count(char **tab)
 {
 	int		count;
 

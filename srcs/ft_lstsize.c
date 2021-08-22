@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 19:12:52 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/01/11 19:28:39 by mmartin-         ###   ########.fr       */
+/*   Updated: 2021/08/22 10:57:09 by vim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 **		List length
 */
 
-int		ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
 	if (lst == NULL)
 		return (0);

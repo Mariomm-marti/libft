@@ -6,7 +6,7 @@
 /*   By: mmartin- <mmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/23 21:17:12 by mmartin-          #+#    #+#             */
-/*   Updated: 2020/10/26 02:59:46 by mmartin-         ###   ########.fr       */
+/*   Updated: 2021/08/22 12:00:38 by vim              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 **		Either 1 if failure or 0 if success
 */
 
-int		ft_split_free(char **tab)
+int	ft_split_free(char **tab)
 {
 	size_t	count;
 
