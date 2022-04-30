@@ -6,7 +6,7 @@
 /*   By: mmartin- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 20:59:02 by mmartin-          #+#    #+#             */
-/*   Updated: 2021/08/21 20:37:02 by vim              ###   ########.fr       */
+/*   Updated: 2022/04/29 02:12:57 by mmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ft_atoi(char const *str)
 	sign = 1;
 	if (*str == '-')
 		sign = -1;
-	str += *str == '-' || *str == '+';
+	str += (*str == '-' || *str == '+');
 	while (ft_isdigit(*str))
 	{
 		result = result * 10 + (*str - 48);
